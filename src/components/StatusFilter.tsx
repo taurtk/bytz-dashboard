@@ -23,7 +23,7 @@ export const StatusFilter: React.FC<StatusFilterProps> = ({
   ] as const;
 
   return (
-    <div className="flex space-x-2 mb-6">
+    <div className="flex flex-wrap gap-2 mb-6">
       {filterOptions.map((option) => {
         const Icon = option.icon;
         const isActive = activeStatus === option.key;
@@ -32,11 +32,12 @@ export const StatusFilter: React.FC<StatusFilterProps> = ({
           <button
             key={option.key}
             onClick={() => onStatusChange(option.key)}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+            className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 ${
               isActive
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
             }`}
+            tabIndex={0}
           >
             <Icon size={18} />
             <span>{option.label}</span>
