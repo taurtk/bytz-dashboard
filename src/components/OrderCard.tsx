@@ -104,7 +104,6 @@ export const OrderCard: React.FC<OrderCardProps> = ({ order, onMarkCompleted }) 
         {/* Total and Action */}
         <div className="flex items-center justify-between pt-3 border-t border-gray-200">
           <div className="flex items-center space-x-1">
-            <DollarSign size={16} className="text-green-600" />
             <span className="text-lg font-bold text-gray-800">
               {formatCurrency(order.total)}
             </span>
