@@ -16,9 +16,9 @@ export const OrderCard: React.FC<OrderCardProps> = ({ order, onMarkCompleted }) 
   };
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('en-IN', {
       style: 'currency',
-      currency: 'USD'
+      currency: 'INR'
     }).format(amount);
   };
 
