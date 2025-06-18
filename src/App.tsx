@@ -99,6 +99,15 @@ function App() {
     }).format(amount);
   };
 
+  // Poll for latest orders every 10 seconds while signed in
+  useEffect(() => {
+    if (!isSignedIn || !currentRestaurant) return;
+    const interval = setInterval(() => {
+      loadOrdersFromApi(currentRestaurant.retailerId);
+    }, 10000); // 10 seconds
+    return () => clearInterval(interval);
+  }, [isSignedIn, currentRestaurant]);
+
   // Show sign-in page if not signed in
   if (!isSignedIn) {
     return <SigninPage onSigninSuccess={handleSigninSuccess} />;
