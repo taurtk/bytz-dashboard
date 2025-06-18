@@ -1,5 +1,5 @@
 // Mark an order as completed via FastAPI backend
-const API_URL = "http://localhost:8000"; // Change if backend runs elsewhere
+const API_URL = "https://bytz-be-314178177189.europe-west1.run.app"; // Change if backend runs elsewhere
 
 export async function markOrderCompleted(orderId: string) {
   const response = await fetch(`${API_URL}/orders/${orderId}/complete`, {
