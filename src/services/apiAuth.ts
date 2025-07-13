@@ -1,5 +1,5 @@
 // API URL for FastAPI backend
-const API_URL = "https://bytz-be-314178177189.europe-west1.run.app"; // Change if backend runs elsewhere
+const API_URL = "https://bytz-be.onrender.com"; // Change if backend runs elsewhere
 
 export async function signup(credentials: {
   email: string;
